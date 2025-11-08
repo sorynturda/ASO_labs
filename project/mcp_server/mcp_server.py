@@ -1,6 +1,7 @@
-import os
-from stat import *
+#!/usr/bin/env python
 
+import os
+import stat
 from fastmcp import FastMCP
 
 mcp = FastMCP("My MCP Server")

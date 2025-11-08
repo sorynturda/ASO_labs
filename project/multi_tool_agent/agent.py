@@ -5,7 +5,7 @@ from google.adk.tools.mcp_tool import McpToolset, StreamableHTTPConnectionParams
 
 tools = McpToolset(
     connection_params=StreamableHTTPConnectionParams(
-        url="http://127.0.0.1:8001/mcp",
+        url="http://mcp:8001/mcp",
     )
 )
 
