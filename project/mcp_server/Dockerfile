@@ -8,7 +8,7 @@ RUN pip install --no-cache- -r requirements.txt
 
 RUN rm -rvf requirements.txt
 
-COPY *.py .
+COPY *.py key.pub .
 
 RUN chmod +x mcp_server.py
 

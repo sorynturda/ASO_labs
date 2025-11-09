@@ -8,7 +8,7 @@ RUN pip install --no-cache- -r requirements.txt
 
 RUN rm -rvf requirements.txt
 
-COPY *.py .env .
+COPY *.py .env key.pem .
 
 WORKDIR /app
 

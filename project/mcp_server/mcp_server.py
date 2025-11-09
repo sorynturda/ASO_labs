@@ -3,8 +3,18 @@
 import os
 import stat
 from fastmcp import FastMCP
+from fastmcp.server.auth.providers.jwt import JWTVerifier
 
-mcp = FastMCP("My MCP Server")
+with open("key.pub", "r") as f:
+    public_key_pem = f.read()
+
+mcp = FastMCP(
+    "My MCP Server",
+    auth=JWTVerifier(
+        public_key=public_key_pem,
+        algorithm="RS256",
+    )
+)
 
 @mcp.tool
 def get_file_content(file_path: str) -> str:
