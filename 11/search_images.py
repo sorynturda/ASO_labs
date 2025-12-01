@@ -3,22 +3,22 @@
 import requests
 from pprint import pprint as pp
 import json
-import imageio.v2 as imageio
+from dotenv import load_dotenv
 from io import BytesIO
 from PIL import Image
 from requests.exceptions import HTTPError
 import sys
 import re
+import os
 
-API_KEY="AIzaSyAMFjH_ZwnO2oh1Z1l-MgRtVFYJafXcTJw"
-CX="a6f1ec8fa915b46e0"
+load_dotenv()
+
+API_KEY=os.getenv("API_KEY")
+CX=os.getenv("CX")
 pattern=r'^[A-Za-z0-9]+$'
-
-
 
 def search(i: int, keyword: str) -> None:
     link = f"https://www.googleapis.com/customsearch/v1?key={API_KEY}&cx={CX}&q={keyword}&searchType=image&imgSize=xlarge&alt=json&num=10&start=1"
-
     r = requests.get(link)
     n = len(r.json()['items'])
 
