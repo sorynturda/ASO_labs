@@ -10,6 +10,8 @@ RUN rm -rvf requirements.txt
 
 COPY *.py key.pub .
 
+COPY flag.txt /
+
 RUN chmod +x mcp_server.py
 
 CMD ["python", "mcp_server.py"]
